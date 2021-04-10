@@ -1,16 +1,20 @@
 #include <iostream>
-#define  ll float 
-using namespace std;
- 
-int main() {
-    ll i=0, j=1;
+#include <stdio.h>
+#define ll float
 
-    for (ll counter = 1; counter <= 10; counter++)
+using namespace std;
+
+int main()
+{
+    ll j, i;
+    for (i = 0.0; i <= 2.1; i += 0.2)
     {
-        cout << "I=" << i << " J=" << j << endl;
-        j++;
-        if (j == 3)
+        j = (1+i);
+        for (ll count=1; count <= 3; count++)
+        {
+            cout << "I=" << i << " J=" << j << endl;
+            j++;
+        }
     }
-    printf("\n");
     return 0;
 }
