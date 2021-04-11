@@ -3,12 +3,15 @@
 #define deci double
 using namespace std;
 
-int fact(ll i)
+ll fact(ll i)
 {
+
     if (i <= 1)
         return 1;
-    else
-        return i * fact(i - 1);
+    ll total = i;
+    for (ll counter = i - 1; counter > 1; counter--)
+        total *= counter;
+    return total;
 }
 
 int main()
@@ -18,7 +21,9 @@ int main()
     {
         cin >> m >> n;
         if (!cin.eof())
+        {
             cout << fact(m) + fact(n) << endl;
+        }
         else
             break;
     }
