@@ -1,32 +1,32 @@
 #include <bits/stdc++.h>
-#define ll long long int
+#define ll uint_fast64_t
+#define llslow long long int
 #define deci long double
-#define ill int_fast64_t
 
 using namespace std;
-using namespace std::chrono;
+
+deci N, result;
+deci phi;
+
+void nthterm()
+{
+    phi = (sqrt(5) + 1) / 2;
+    result = (pow(phi, N) - pow(-phi, -N)) / (sqrt(5));
+    if (N == 1) result = 1;
+}
+
 int main(void)
 {
-    // ios_base::sync_with_stdio(false);
-    // cin.tie(NULL);
-     ill  test=0;
-     ll tess=0;
-      auto start = high_resolution_clock::now(); 
-     for (tess=0; tess<10000000000; tess++)
-     {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    ll testcases;
+    cin >> testcases;
+    for (ll counter = 1; counter <= testcases; counter++)
+    {
+        cin >> N;
+        nthterm();
+        cout << "Fib(" << N << ") = " << ll(result) << endl;
+    }
 
-     }
-     auto stop = high_resolution_clock::now(); 
-    //  for (tess=0; tess<10000000000; tess++)
-    //  {
-         
-    //  }
-     
-     auto duration = duration_cast<microseconds>(stop - start);
-  
-    cout << "Time taken by function: "
-         << duration.count()/1000000 << " seconds" << endl;
-  
-    cout << endl << sizeof(test)  << endl << sizeof(tess)  <<endl;
     return 0;
 }
