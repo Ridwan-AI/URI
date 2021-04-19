@@ -5,27 +5,21 @@
 
 using namespace std;
 
-deci N, result;
-deci phi;
-
-void nthterm()
-{
-    phi = (sqrt(5) + 1) / 2;
-    result = (pow(phi, N) - pow(-phi, -N)) / (sqrt(5));
-    if (N == 1) result = 1;
-}
-
 int main(void)
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    // ios_base::sync_with_stdio(false);
+    // cin.tie(NULL);
     ll testcases;
+    deci N, result, phi;
+    // cout.precision(50);
     cin >> testcases;
     for (ll counter = 1; counter <= testcases; counter++)
     {
         cin >> N;
-        nthterm();
-        cout << "Fib(" << N << ") = " << ll(result) << endl;
+        phi = (sqrt(5) + 1) / 2;
+        
+        cout << "Fib(" << N << ") = ";
+        cout << (pow((sqrt(5) + 1) / 2, N) - (-1)*pow((sqrt(5) + 1) / 2, (-1)*N)) / (sqrt(5));
     }
 
     return 0;

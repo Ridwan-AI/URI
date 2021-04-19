@@ -10,7 +10,7 @@ int main(void)
     // ios_base::sync_with_stdio(false);
     // cin.tie(NULL);
      ill  test=0;
-     ll tess=0;
+     uint_fast64_t tess=0;
       auto start = high_resolution_clock::now(); 
      for (tess=0; tess<10000000000; tess++)
      {
