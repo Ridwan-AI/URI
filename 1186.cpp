@@ -18,7 +18,7 @@ int main(void)
     deci total = 0;
 
     for (ll row = 0; row < 12; row++)
-        for (ll column = 0; column < (11 - row); column++)
+        for (ll column = 11; column > (11 - row); column--)
             total += M[row][column];
     if (O == 'S')
         cout << total << endl;
