@@ -11,6 +11,5 @@ int main(void)
     cout << fixed << setprecision(1);
 
     
-
     return 0;
 }
