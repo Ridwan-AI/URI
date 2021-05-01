@@ -4,36 +4,55 @@
 #define deci long double
 using namespace std;
 
+int countDigit(long long n)
+{
+    int count = 0;
+    while (n != 0)
+    {
+        n = n / 10;
+        ++count;
+    }
+    return count;
+}
+
 int main(void)
 {
     // ios_base::sync_with_stdio(false);
     // cin.tie(NULL);
     cout << fixed << setprecision(1);
-    ll size;
-    cin >> size;
-    ll center;
-    while (size > 0)
+    deci N, center;
+    ll square[1000][1000];
+    while (1)
     {
-        for (int i = 1; i <= size; i++)
-            for (int j = 1; j <= size; j++)
+        cin >> N;
+        if (N == 0)
+            return 0;
+        center = ceil(N / 2);
+        cout << right;
+        int width = 1 + countDigit(center);
+        for (ll counter = 0; counter <= center; counter++)
+        {
+            for (ll count = 0; count < N; count++)
             {
-                y = i - 1;
-                yy = j - 1;
-                c[i][j] = z;
-
-                if (size > 2)
-                {
-
-                    if (i == j && i < size)
-                    {
-                        c[i][j] == z++;
-                        z = 1;
-                    }
-                    else
-                        c[i][j] == z;
-                }
+                square[counter][count] = 1 + count - counter;
             }
-        cin >> size;
+        }
+        for (ll counter = N; counter > center; counter--)
+        {
+            for (ll count = N; count >= 0; count--)
+            {
+                square[counter][count] = (N-counter);
+            }
+        }
+        for (ll counter = 0; counter < N; counter++)
+        {
+            for (ll count = 0; count < N; count++)
+            {
+                cout << setw(width) << square[counter][count] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
     return 0;
 }
